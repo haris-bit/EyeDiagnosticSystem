@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    .panel {
+        width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #3498db;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .panel-default {
+        background-color: #3498db;
+    }
+    .panel-danger {
+        background-color: #e35b40;
+    }
+    .panel h1 {
+        font-size: 36px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    .result {
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    .result span {
+        font-weight: bold;
+    }
+</style>
+{% endblock head %}
+
+
+{% block content %}
+<div class="panel panel-{% if prediction == "normal eye" %}default{% else %}danger{% endif %}">
+    <h1>Eye Diagnostic System</h1>
+
+    <h3>The uploaded image is predicted to be {{ prediction }}.</h3>
+
+</div>
+{% endblock %}
